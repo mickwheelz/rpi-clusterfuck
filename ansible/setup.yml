@@ -1,0 +1,8 @@
+- name: Setup Cluster
+  hosts: clusterfuck
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: set-hostname
+
+- import_playbook: k3s-ansible/site.yml

@@ -1,0 +1,6 @@
+- name: Setup Cluster
+  hosts: clusterfuck
+  gather_facts: yes
+  become: yes
+  roles:
+    - role: reboot-all
