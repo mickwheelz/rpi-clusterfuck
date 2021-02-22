@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: pihole
+spec:
+  selector:
+    app: pihole
+  ports:
+  - port: 8000
+    targetPort: 80
+    name: web
+  - port: 53
+    targetPort: 53
+    protocol: TCP
+    name: dns
+  - port: 53
+    targetPort: 53
+    protocol: UDP
+    name: dns-udp
+  externalIPs:
+  - 192.168.199.3

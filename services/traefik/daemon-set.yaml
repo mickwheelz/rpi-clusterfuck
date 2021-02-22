@@ -28,6 +28,9 @@ spec:
         - name: admin
           containerPort: 8080
           hostPort: 8080
+        - name: dns
+          containerPort: 53
+          hostPort: 53
         args:
         # Enable the dashboard without requiring a password. Not recommended
         # for production.
@@ -40,6 +43,8 @@ spec:
         # Define two entrypoint ports, and setup a redirect from HTTP to HTTPS.
         - --entryPoints.web.address=:80
         - --entryPoints.websecure.address=:443
+        - --entryPoints.dns.address=:53
+
         # - --entrypoints.web.http.redirections.entryPoint.to=websecure
         # - --entrypoints.web.http.redirections.entryPoint.scheme=https
 

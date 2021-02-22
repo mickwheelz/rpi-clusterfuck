@@ -1,0 +1,17 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+- namespace.yaml
+- dnsmasq-persistentvolume.yaml
+- dnsmasq-persistentvolumeclaim.yaml
+- pihole-persistentvolume.yaml
+- pihole-persistentvolumeclaim.yaml
+- pihole-storageclass.yaml
+- pihole-deployment.yaml
+- pihole-service.yaml
+
+namespace: pihole
+
+commonLabels:
+  app: pihole
