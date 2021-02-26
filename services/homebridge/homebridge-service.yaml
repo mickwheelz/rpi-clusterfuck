@@ -1,0 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: homebridge
+  name: homebridge
+  namespace: homebridge
+spec:
+  type: ClusterIP
+  selector:
+    app: homebridge
+ports:
+  - name: homebridge
+    port: 51827
+    protocol: TCP
+    targetPort: homebridge
+  - name: homebridge-2
+    port: 5353
+    protocol: TCP
+    targetPort: homebridge-2
+  selector:
+    k8s-app: homebridge
+  sessionAffinity: None
+  type: LoadBalancer

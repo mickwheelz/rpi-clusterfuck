@@ -10,6 +10,7 @@ resources:
 - pihole-storageclass.yaml
 - pihole-deployment.yaml
 - pihole-service.yaml
+- pihole-ingress.yaml
 
 namespace: pihole
 

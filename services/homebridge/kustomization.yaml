@@ -1,0 +1,12 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+- namespace.yaml
+- homebridge-deployment.yaml
+- homebridge-service.yaml
+
+namespace: homebridge
+
+commonLabels:
+  app: homebridge

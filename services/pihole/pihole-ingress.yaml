@@ -1,20 +1,19 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: traefik
+  name: pihole
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-  - host: traefik.local.mickwheelz.net
+  - host: pihole.local.mickwheelz.net
     http:
       paths:
       - backend:
           service:
-            name: traefik
+            name: pihole
             port:
-              number: 8080
+              number: 8000
         path: /
         pathType: Prefix
-        
